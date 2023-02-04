@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,9 +23,13 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/dashboard/kandidat', function () {
+Route::get('/dashboard/kandidat',[CandidateController::class,
+
+    // return view('kandidat/main');
+],function (){
     return view('kandidat/main');
-})->middleware(['auth', 'verified'])->name('kandidat');
+}
+)->middleware(['auth', 'verified'])->name('kandidat');
 
 Route::get('/dashboard/hasilsuara', function () {
     return view('hasilsuara/main');
