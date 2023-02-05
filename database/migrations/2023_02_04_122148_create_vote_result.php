@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('vote_result', function (Blueprint $table) {
+        Schema::create('vote_results', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vote_result');
+        Schema::dropIfExists('vote_results');
     }
 };

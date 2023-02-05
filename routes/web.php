@@ -23,13 +23,8 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/dashboard/kandidat',[CandidateController::class,
-
-    // return view('kandidat/main');
-],function (){
-    return view('kandidat/main');
-}
-)->middleware(['auth', 'verified'])->name('kandidat');
+Route::resource('/dashboard/kandidat',CandidateController::class
+)->middleware(['auth', 'verified']);
 
 Route::get('/dashboard/hasilsuara', function () {
     return view('hasilsuara/main');
